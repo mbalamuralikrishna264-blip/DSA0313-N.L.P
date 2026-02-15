@@ -1,10 +1,13 @@
 import spacy
 
+# Load model
 nlp = spacy.load("en_core_web_sm")
 
-text = "Apple was founded by Steve Jobs in California."
+text = input("Enter text: ")
 
 doc = nlp(text)
 
+print("Named Entities:")
+
 for ent in doc.ents:
-    print(ent.text, ent.label_)
+    print(ent.text, "-", ent.label_)
